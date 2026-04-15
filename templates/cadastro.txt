@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cadastro</title>
+</head>
+
+<body>
+
+<h1>Cadastro</h1>
+
+<a href="/">Voltar</a>
+
+</body>
+</html>
