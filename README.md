@@ -1,19 +1,31 @@
-🎯 BingoLú
+# 🎯 BingoLú
 
 Sistema web desenvolvido com Python e Flask para gerenciamento de usuários em um ambiente de bingo online.
 
-🚀 Funcionalidades
-Cadastro de usuários
-Login de usuários
-Navegação entre páginas
-Estrutura preparada para expansão
-🛠️ Tecnologias utilizadas
-Python
-Flask
-HTML
-CSS
-SQLite
-📂 Estrutura do projeto
+---
+
+## 🚀 Funcionalidades
+
+* Cadastro de usuários
+* Login de usuários
+* Navegação entre páginas
+* Estrutura preparada para expansão
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+* Python
+* Flask
+* HTML
+* CSS
+* SQLite
+
+---
+
+## 📂 Estrutura do projeto
+
+```
 BingoLu/
 │
 ├── frontend/
@@ -25,17 +37,38 @@ BingoLu/
 ├── app.py
 ├── requirements.txt
 └── README.md
-▶️ Como executar o projeto
-Instale as dependências:
+```
+
+---
+
+## ▶️ Como executar o projeto
+
+### 1. Instalar dependências
+
+```
 pip install -r requirements.txt
-Execute o projeto:
+```
+
+### 2. Executar o projeto
+
+```
 python app.py
-Acesse no navegador:
+```
+
+### 3. Acessar no navegador
+
+```
 http://localhost:5000
-📌 Status do projeto
+```
+
+---
+
+## 📌 Status do projeto
 
 🚧 Em desenvolvimento
 
-👨‍💻 Autor
+---
+
+## 👨‍💻 Autor
 
 Projeto desenvolvido por você 🚀
