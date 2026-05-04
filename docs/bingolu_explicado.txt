@@ -1,1 +1,0 @@
-# Projeto BingoLu ??Sistema em desenvolvimento para gerenciamento de bingo online.## ?? Tecnologias* HTML* CSS* JavaScript* (adicione depois o que usar)## ?? Funcionalidades* Cadastro de usuários* Login* Sistema de bingo## ?? Estrutura* /frontend* /backend* /database## ?? StatusEm desenvolvimento
