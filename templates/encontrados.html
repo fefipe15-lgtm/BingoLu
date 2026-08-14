@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Animais Encontrados - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h1>BingoLú Pets</h1>
+
+    <div class="menu">
+
+        <a href="/feed">
+            Feed
+        </a>
+
+        <a href="/meus_posts">
+            Meus Pets
+        </a>
+
+        <a href="/meus_avistamentos">
+            Avistamentos
+        </a>
+
+        <a href="/post_pet">
+            Nova Postagem
+        </a>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<h2 class="titulo-pagina">
+
+    Histórico de Pets Encontrados
+
+</h2>
+
+<p class="mensagem-vazia">
+    Assim que um anúncio for marcado como encontrado,
+    ele aparecerá aqui.
+</p>
+
+<div class="submenu-meus-pets">
+
+    <a
+    href="/meus_posts">
+
+        Meus Anúncios
+
+    </a>
+
+    <a
+    href="/encontrados"
+    class="submenu-ativo">
+
+        Histórico de Encontrados
+
+    </a>
+
+</div>
+
+<div class="feed-container">
+
+{% if pets %}
+
+{% for pet in pets %}
+
+<div class="card-pet">
+
+    <img
+    src="{{ url_for('static',
+    filename='uploads/' + pet[5]) }}">
+
+    <h2>
+
+        {{ pet[1] }}
+
+    </h2>
+
+    <p class="status encontrado">
+
+        ✔ Animal encontrado
+
+    </p>
+
+    <div class="info-pet">
+
+        <p>
+
+            <strong>Descrição:</strong>
+
+            {{ pet[2] }}
+
+        </p>
+
+        <p>
+
+            <strong>Cidade:</strong>
+
+            {{ pet[3] }}
+
+        </p>
+
+        <p>
+
+            <strong>Contato:</strong>
+
+            {{ pet[4] }}
+
+        </p>
+
+        <p class="data-postagem">
+
+            Publicado em {{ pet[6] }}
+
+        </p>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% else %}
+
+<div class="card-pet">
+
+    <h2>
+
+        Nenhum animal encontrado
+
+    </h2>
+
+    <p class="mensagem-vazia">
+        Assim que algum anúncio for encerrado,
+        ele aparecerá neste histórico.
+    </p>
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>
+

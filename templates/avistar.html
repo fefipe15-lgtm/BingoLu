@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Informar Avistamento</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <h1 class="titulo-pagina titulo-avistamento">
+        Informar Avistamento
+    </h1>
+<form method="POST">
+
+    <input
+    type="text"
+    name="local"
+    placeholder="Local onde o pet foi visto"
+    required>
+
+    <input
+    type="text"
+    name="nome_contato"
+    placeholder="Seu nome"
+    required>
+
+    <input
+    type="text"
+    name="telefone_contato"
+    placeholder="Telefone para contato">
+
+    <input
+    type="email"
+    name="email_contato"
+    placeholder="E-mail para contato">
+
+    <textarea
+    name="observacao"
+    placeholder="Observações"
+    required></textarea>
+
+    <button type="submit">
+        Enviar informação
+    </button>
+
+</form>
+
+</body>
+
+</html>

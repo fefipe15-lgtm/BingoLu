@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Editar Postagem - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+    <h1>BingoLú Pets</h1>
+
+    <div class="menu">
+
+        <a href="/feed">Feed</a>
+
+        <a href="/meus_posts">Meus posts</a>
+
+        <a href="/logout">Sair</a>
+
+    </div>
+
+</div>
+
+<h2 class="titulo-pagina">
+    Editar postagem
+</h2>
+
+<form method="POST">
+
+    <input
+        type="text"
+        name="nome"
+        value="{{ pet[1] }}"
+        required>
+
+    <textarea
+        name="descricao"
+        required>{{ pet[2] }}</textarea>
+
+    <input
+        type="text"
+        name="cidade"
+        value="{{ pet[3] }}"
+        required>
+
+    <input
+        type="text"
+        name="contato"
+        value="{{ pet[4] }}"
+        required>
+
+    <button type="submit">
+        Salvar alterações
+    </button>
+
+</form>
+
+</body>
+</html>

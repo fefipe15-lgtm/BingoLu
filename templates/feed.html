@@ -1,18 +1,277 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Pets Perdidos</title>
+
+    <meta charset="UTF-8">
+
+    <title>Feed - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
-<body>
+<body class="pagina-feed">
 
-<h1>Pets Perdidos</h1>
 
-<a href="/post_pet">Criar postagem</a>
+<div class="navbar">
 
-<br><br>
+    <h1>BingoLú Pets</h1>
 
-<a href="/">Voltar</a>
+    <div class="menu">
+
+        <a href="/feed" class="ativo">
+            Feed
+        </a>
+
+        <a href="/meus_posts">
+            Meus Pets
+        </a>
+
+        <a href="/meus_avistamentos">
+            Avistamentos
+        </a>
+
+        <a href="/encontrados">
+            Encontrados
+        </a>
+
+        <a href="/post_pet">
+            Nova Postagem
+        </a>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</div>
+
+
+<div class="cabecalho-feed">
+
+    <h2 class="titulo-pagina">
+        Pets que precisam voltar para casa
+    </h2>
+
+    <p class="subtitulo">
+
+        Olá,
+        <strong>{{ session["usuario_nome"] }}</strong>!
+
+        <br>
+
+        Encontre um anúncio, ajude com um avistamento
+        e faça parte dessa busca.
+
+    </p>
+
+</div>
+
+
+<div class="area-pesquisa-feed">
+
+    <p class="titulo-pesquisa">
+        Procurar um pet por cidade
+    </p>
+
+
+    <form
+    method="GET"
+    action="/feed"
+    class="busca-cidade">
+
+        <input
+        type="text"
+        name="cidade"
+        placeholder="Digite uma cidade"
+        value="{{ cidade if cidade else '' }}">
+
+
+        <button type="submit">
+            Pesquisar
+        </button>
+
+    </form>
+
+</div>
+
+
+<div class="feed-container">
+
+
+{% if pets %}
+
+
+{% for pet in pets %}
+
+
+<div class="card-pet">
+
+
+    <img
+    src="{{ url_for('static',
+    filename='uploads/' + pet[5]) }}">
+
+
+    <h2>
+
+        {{ pet[1] }}
+
+    </h2>
+
+
+    <p class="status
+
+    {% if pet[7] == 'Encontrado' %}
+
+        encontrado
+
+    {% else %}
+
+        perdido
+
+    {% endif %}
+
+    ">
+
+        {{ pet[7] }}
+
+    </p>
+
+
+    <div class="info-pet">
+
+
+        <p>
+
+            <strong>Descrição</strong>
+
+            <br>
+
+            {{ pet[2] }}
+
+        </p>
+
+
+        <p>
+
+            <strong>Cidade</strong>
+
+            <br>
+
+            {{ pet[3] }}
+
+        </p>
+
+
+        <p>
+
+            <strong>Contato</strong>
+
+            <br>
+
+            {{ pet[4] }}
+
+        </p>
+
+
+        <p class="data-postagem">
+
+            <strong>Publicado em</strong>
+
+            <br>
+
+            {{ pet[6] }}
+
+        </p>
+
+
+    </div>
+
+
+    <hr>
+
+
+    <!--
+    TEMPORÁRIO
+
+    Quando alterarmos o app.py,
+    esta comparação será feita pelo usuario_id.
+    -->
+
+
+    {% if pet[8] == session["usuario_id"] %}
+
+
+    <span class="meu-anuncio">
+
+        MEU ANÚNCIO
+
+    </span>
+
+
+    {% else %}
+
+
+    <a
+    class="botao-avistar"
+    href="/avistar/{{ pet[0] }}">
+
+        Vi este animal
+
+    </a>
+
+
+    {% endif %}
+
+
+</div>
+
+
+{% endfor %}
+
+
+{% else %}
+
+
+<div class="card-pet aviso-card">
+
+
+    <h2>
+
+        Nenhum anúncio encontrado
+
+    </h2>
+
+
+    <p>
+
+        Não existem pets cadastrados
+        para esta pesquisa.
+
+    </p>
+
+
+    <p class="texto-secundario">
+
+        Pesquise outra cidade ou aguarde
+        novas publicações.
+
+    </p>
+
+
+</div>
+
+
+{% endif %}
+
+
+</div>
+
 
 </body>
+
 </html>

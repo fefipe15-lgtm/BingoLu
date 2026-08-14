@@ -1,27 +1,112 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Login</title>
+
+    <meta charset="UTF-8">
+
+    <title>Login - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
-<body>
+<body class="pagina-login">
 
-<h1>Login</h1>
+<div class="conteudo-login">
 
-<form method="POST">
+    <div class="apresentacao-login">
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+        <h1 class="logo-login">
+            BingoLú
+        </h1>
 
-    <label>Senha:</label><br>
-    <input type="password" name="senha" required><br><br>
+        <h2>
+            Bem-vindo de volta!
+        </h2>
 
-    <button type="submit">Entrar</button>
+        <p class="descricao-login">
+            Entre na sua conta para acompanhar seus anúncios,
+            receber avistamentos e ajudar outros pets a voltarem para casa.
+        </p>
 
-</form>
+    </div>
 
-<br>
-<a href="/">Voltar</a>
+
+    <div class="card-login">
+
+        <h2>
+            Acessar minha conta
+        </h2>
+
+        <p class="subtitulo-login">
+            Informe seus dados para continuar.
+        </p>
+
+
+        <form action="/login" method="POST">
+
+            <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="password"
+                name="senha"
+                placeholder="Senha"
+                required
+            >
+
+            <button type="submit">
+                Entrar
+            </button>
+
+        </form>
+
+
+        <p class="link-secundario">
+
+            Ainda não possui conta?
+
+            <a href="/cadastro">
+                Cadastre-se
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <div class="proposito-login">
+
+        <span>
+            Encontrar
+        </span>
+
+        <span class="separador">
+            •
+        </span>
+
+        <span>
+            Avisar
+        </span>
+
+        <span class="separador">
+            •
+        </span>
+
+        <span>
+            Reencontrar
+        </span>
+
+    </div>
+
+</div>
 
 </body>
+
 </html>

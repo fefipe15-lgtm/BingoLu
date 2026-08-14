@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Meus Pets - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+    <h1>
+        BingoLú pets
+    </h1>
+
+    <div class="menu">
+
+        <a href="/feed">
+            Feed
+        </a>
+
+        <a href="/meus_posts" class="ativo">
+            Meus Pets
+        </a>
+
+        <a href="/meus_avistamentos">
+            Avistamentos
+        </a>
+
+        <a href="/post_pet">
+            Nova Postagem
+        </a>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<h2 class="titulo-pagina">
+
+    Meus Pets
+
+</h2>
+
+
+
+<p class="subtitulo">
+
+    Gerencie seus anúncios.
+
+</p>
+
+
+
+<div class="submenu-meus-pets">
+
+    <a
+    href="/meus_posts"
+    class="submenu-ativo">
+
+        Meus Anúncios
+
+    </a>
+
+
+    <a
+    href="/encontrados">
+
+        Acessar Histórico de Encontrados
+
+    </a>
+
+</div>
+
+
+
+<div class="feed-container">
+
+
+{% if pets %}
+
+
+{% for pet in pets %}
+
+
+<div class="card-pet">
+
+
+    <img
+    src="{{ url_for('static',
+    filename='uploads/' + pet[5]) }}">
+
+
+
+    <h2>
+
+        {{ pet[1] }}
+
+    </h2>
+
+
+
+    <span class="meu-anuncio">
+
+        MEU ANÚNCIO
+
+    </span>
+
+
+
+    <div class="info-pet">
+
+
+        <p>
+            <strong>Descrição</strong>
+        </p>
+
+
+        <p>
+            {{ pet[2] }}
+        </p>
+
+
+
+        <p>
+            <strong>Cidade</strong>
+        </p>
+
+
+        <p>
+            {{ pet[3] }}
+        </p>
+
+
+
+        <p>
+            <strong>Contato</strong>
+        </p>
+
+
+        <p>
+            {{ pet[4] }}
+        </p>
+
+
+
+        <p class="data-postagem">
+            <strong>Publicado em</strong>
+        </p>
+
+
+        <p>
+            {{ pet[6] }}
+        </p>
+
+
+    </div>
+
+
+
+    <p class="status perdido">
+
+        {{ pet[7] }}
+
+    </p>
+
+
+
+    <hr>
+
+
+
+    <div class="acoes-card">
+
+
+        <a href="/editar_post/{{ pet[0] }}">
+
+            Editar
+
+        </a>
+
+
+
+        <a
+        href="/excluir_post/{{ pet[0] }}"
+        onclick="return confirm('Deseja excluir esta postagem?')">
+
+            Excluir
+
+        </a>
+
+
+
+        <a
+        href="/marcar_encontrado/{{ pet[0] }}">
+
+            Marcar como Encontrado
+
+        </a>
+
+
+    </div>
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+{% else %}
+
+
+
+<div class="card-pet aviso-card">
+
+
+    <h2>
+
+        Você ainda não possui anúncios.
+
+    </h2>
+
+
+    <p>
+
+        Clique em <strong>Nova Postagem</strong>
+        para cadastrar seu primeiro pet.
+
+    </p>
+
+
+</div>
+
+
+
+{% endif %}
+
+
+</div>
+
+
+
+</body>
+
+</html>

@@ -1,22 +1,108 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
+    <meta charset="UTF-8">
+
     <title>BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
-<body>
+<body class="pagina-inicial">
 
-<h1>BingoLú</h1>
-<p>Encontre pets perdidos na sua região.</p>
+    <div class="pata-index pata-esquerda" aria-hidden="true">
 
-<a href="/login">Login</a>
-<br><br>
+        <img
+            src="{{ url_for('static', filename='patas.svg') }}"
+            alt=""
+        >
+    
+    </div>
+    
+    
+    <div class="pata-index pata-direita" aria-hidden="true">
+    
+        <img
+            src="{{ url_for('static', filename='patas.svg') }}"
+            alt=""
+        >
+    
+    </div>
 
-<a href="/cadastro">Cadastro</a>
-<br><br>
 
-<a href="/feed">Ver pets perdidos</a>
+    <div class="conteudo-inicial">
 
+        <div class="apresentacao-inicial">
+
+            <h1 class="logo-inicial">
+                BingoLú Pets
+            </h1>
+
+            <h2>
+                Ajude um animal a voltar para casa.
+            </h2>
+
+            <p class="descricao-inicial">
+
+                O BingoLú conecta pessoas que procuram
+                seus pets perdidos com quem pode ajudar
+                a encontrá-los.
+
+            </p>
+
+            <div class="acoes-iniciais">
+
+                <a
+                href="/login"
+                class="botao-principal">
+
+                    Já tenho uma conta
+
+                </a>
+
+                <a
+                href="/cadastro"
+                class="botao-cadastro">
+
+                    Criar minha conta
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="proposito-inicial">
+
+            <span>
+                Encontrar
+            </span>
+
+            <span class="separador">
+                •
+            </span>
+
+            <span>
+                Avisar
+            </span>
+
+            <span class="separador">
+                •
+            </span>
+
+            <span>
+                Reencontrar
+            </span>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>

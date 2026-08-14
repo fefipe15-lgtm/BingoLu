@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Central de Avistamentos - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+<div class="navbar">
+
+    <h1>
+        BingoLú Pets
+    </h1>
+
+    <div class="menu">
+
+        <a href="/feed">
+            Feed
+        </a>
+
+        <a href="/meus_posts">
+            Meus Pets
+        </a>
+
+        <a href="/meus_avistamentos" class="ativo">
+            Avistamentos
+        </a>
+
+        <a href="/post_pet">
+            Nova Postagem
+        </a>
+
+        <a href="/logout">
+            Sair
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<div class="cabecalho-avistamentos">
+
+    <h2 class="titulo-pagina">
+        Central de Avistamentos
+    </h2>
+
+    <p class="subtitulo">
+
+        Aqui você recebe informações enviadas pela
+        comunidade sobre os animais cadastrados por você.
+
+    </p>
+
+</div>
+
+
+
+<div class="feed-container">
+
+
+{% if avistamentos %}
+
+
+{% for aviso in avistamentos %}
+
+
+<div class="card-avistamento">
+
+
+    <div class="cabecalho-avistamento">
+
+
+        <div>
+
+            <p class="pet-avistado">
+
+                PET: {{ aviso[0] }}
+
+            </p>
+
+            <h2>
+
+                Novo avistamento recebido
+
+            </h2>
+
+        </div>
+
+
+        <span class="status-avistamento">
+
+            RECEBIDO
+
+        </span>
+
+
+    </div>
+
+
+
+    <div class="mensagem-avistamento">
+
+
+        <p>
+
+            Um membro da comunidade informou ter visto
+            <strong>{{ aviso[0] }}</strong>.
+
+        </p>
+
+
+        <p>
+
+            <strong>📍 Local informado</strong>
+
+        </p>
+
+        <p>
+
+            {{ aviso[1] }}
+
+        </p>
+
+
+        <p>
+
+            <strong>💬 Observação</strong>
+
+        </p>
+
+        <p>
+
+            {{ aviso[2] }}
+
+        </p>
+
+
+    </div>
+
+
+
+    <hr>
+
+
+
+    <div class="informante">
+
+
+        <h3>
+
+            Pessoa que realizou o avistamento
+
+        </h3>
+
+
+        <p>
+
+            <strong>Nome:</strong>
+            {{ aviso[4] }}
+
+        </p>
+
+
+        <p>
+
+            <strong>Telefone:</strong>
+            {{ aviso[5] }}
+
+        </p>
+
+
+        <p>
+
+            <strong>E-mail:</strong>
+            {{ aviso[6] }}
+
+        </p>
+
+
+    </div>
+
+
+
+    <p class="data-postagem">
+
+        Avistamento recebido em {{ aviso[3] }}
+
+    </p>
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+{% else %}
+
+
+<div class="card-pet aviso-vazio">
+
+
+    <h2>
+
+        Nenhum avistamento recebido
+
+    </h2>
+
+
+    <p>
+
+        Quando alguém informar ter visto um dos seus pets,
+        o aviso aparecerá nesta central.
+
+    </p>
+
+
+</div>
+
+
+{% endif %}
+
+
+</div>
+
+
+</body>
+
+</html>

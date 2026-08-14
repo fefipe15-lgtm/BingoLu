@@ -1,36 +1,134 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Cadastro</title>
+
+    <meta charset="UTF-8">
+
+    <title>Criar conta - BingoLú</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
 </head>
 
-<body>
+<body class="pagina-login">
 
-<h1>Cadastro</h1>
+<div class="conteudo-login">
 
-<form method="POST">
+    <div class="apresentacao-login">
 
-    <label>Nome:</label><br>
-    <input type="text" name="nome" required><br><br>
+        <h1 class="logo-login">
+            BingoLú
+        </h1>
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+        <h2>
+            Faça parte do BingoLú!
+        </h2>
 
-    <label>Senha:</label><br>
-    <input type="password" name="senha" required><br><br>
+        <p class="descricao-login">
+            Crie sua conta para divulgar pets perdidos,
+            informar avistamentos e ajudar animais a
+            encontrarem o caminho de volta para casa.
+        </p>
 
-    <label>Telefone:</label><br>
-    <input type="text" name="telefone"><br><br>
+    </div>
 
-    <label>Cidade:</label><br>
-    <input type="text" name="cidade"><br><br>
 
-    <button type="submit">Cadastrar</button>
+    <div class="card-login">
 
-</form>
+        <h2>
+            Criar minha conta
+        </h2>
 
-<br>
-<a href="/">Voltar</a>
+        <p class="subtitulo-login">
+            Preencha seus dados para começar.
+        </p>
+
+
+        <form action="/cadastro" method="POST">
+
+            <input
+                type="text"
+                name="nome"
+                placeholder="Nome"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                required
+            >
+
+            <input
+                type="password"
+                name="senha"
+                placeholder="Senha"
+                required
+            >
+
+            <input
+                type="text"
+                name="telefone"
+                placeholder="Telefone"
+                required
+            >
+
+            <input
+                type="text"
+                name="cidade"
+                placeholder="Cidade"
+                required
+            >
+
+            <button type="submit">
+                Criar conta
+            </button>
+
+        </form>
+
+
+        <p class="link-secundario">
+
+            Já possui uma conta?
+
+            <a href="/login">
+                Entrar
+            </a>
+
+        </p>
+
+    </div>
+
+
+    <div class="proposito-login">
+
+        <span>
+            Encontrar
+        </span>
+
+        <span class="separador">
+            •
+        </span>
+
+        <span>
+            Avisar
+        </span>
+
+        <span class="separador">
+            •
+        </span>
+
+        <span>
+            Reencontrar
+        </span>
+
+    </div>
+
+</div>
 
 </body>
+
 </html>

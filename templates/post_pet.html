@@ -1,14 +1,145 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<title>Postar Pet</title>
+
+
+<meta charset="UTF-8">
+
+<title>Nova Postagem - BingoLú</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+
 </head>
 
 <body>
 
-<h1>Postar pet perdido</h1>
+<div class="navbar">
 
-<a href="/feed">Voltar</a>
+
+<h1>BingoLú Pets</h1>
+
+<div class="menu">
+
+    <a href="/feed">
+        Feed
+    </a>
+
+    <a href="/meus_posts">
+        Meus Pets
+    </a>
+
+    <a href="/meus_avistamentos">
+        Avistamentos
+    </a>
+
+    <a href="/post_pet" class="ativo">
+        Nova Postagem
+    </a>
+
+    <a href="/logout">
+        Sair
+    </a>
+
+</div>
+
+
+</div>
+
+
+<h2 class="titulo-pagina">
+
+
+Cadastrar Animal Perdido
+
+
+</h2>
+
+<p class="subtitulo">
+
+
+Informe os dados abaixo para que outras pessoas possam ajudá-lo a localizar seu pet.
+
+
+</p>
+
+<form
+method="POST"
+enctype="multipart/form-data"
+class="formulario-pet">
+
+
+<label>
+
+    Nome do animal
+
+</label>
+
+<input
+type="text"
+name="nome"
+required>
+
+<label>
+
+    Descrição
+
+</label>
+
+<textarea
+name="descricao"
+rows="5"
+required></textarea>
+
+<label>
+
+    Cidade
+
+</label>
+
+<input
+type="text"
+name="cidade"
+required>
+
+<label>
+
+    Contato
+
+</label>
+
+<input
+type="text"
+name="contato"
+placeholder="Telefone ou WhatsApp"
+required>
+
+<label>
+
+    Foto do animal
+
+</label>
+
+<input
+type="file"
+name="imagem"
+accept=".jpg,.jpeg,.png"
+required>
+
+<button
+type="submit"
+class="botao-principal">
+
+    Publicar Anúncio
+
+</button>
+
+
+</form>
 
 </body>
+
 </html>

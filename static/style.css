@@ -1,0 +1,2297 @@
+/* =======================================================
+   BINGOLÚ
+   STYLE.CSS
+   PARTE 1
+   Configurações Gerais + Navbar + Cabeçalhos
+======================================================= */
+
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+/* ==========================
+   CONFIGURAÇÕES GERAIS
+========================== */
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#f1efe3;
+
+    color:#2f2f2f;
+
+    font-family:"Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+
+    background:#6A0DAD;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 35px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.15);
+
+}
+
+
+/* ==========================
+   LOGO
+========================== */
+
+.navbar h1{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+
+/* ==========================
+   MENU
+========================== */
+
+.menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+/* ==========================
+   BOTÕES DA NAVBAR
+========================== */
+
+.menu a{
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:8px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+
+/* Hover apenas na navegação */
+
+.menu a:hover{
+
+    background:rgba(255,255,255,.18);
+
+}
+
+
+/* ==========================
+   ABA ATUAL
+========================== */
+
+/*
+Adicionar class="ativo"
+na página correspondente.
+
+Exemplo:
+
+<a href="/feed"
+class="ativo">
+
+*/
+
+.menu a.ativo{
+
+    background:white;
+
+    color:#6A0DAD;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.18);
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================
+   CONTAINER PRINCIPAL
+========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+/* ==========================
+   TÍTULO DA PÁGINA
+========================== */
+
+.titulo-pagina{
+
+    margin-top:35px;
+
+    color:#6A0DAD;
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================
+   SUBTÍTULO
+========================== */
+
+.subtitulo{
+
+    margin-top:10px;
+
+    margin-bottom:35px;
+
+    text-align:center;
+
+    color:#6d6d6d;
+
+    font-size:17px;
+
+}
+
+
+/* ==========================
+   SEPARADORES
+========================== */
+
+hr{
+
+    border:none;
+
+    height:1px;
+
+    background:#e4e4e4;
+
+    margin:25px 0;
+
+}
+
+
+/* ==========================
+   TEXTO PADRÃO
+========================== */
+
+p{
+
+    line-height:1.6;
+
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media(max-width:900px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+    .menu{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+
+}
+/* =======================================================
+   BINGOLÚ
+   STYLE.CSS
+   PARTE 2
+   Formulários + Botões
+=======================================================*/
+
+
+/* ==========================
+   FORMULÁRIOS
+========================== */
+
+form{
+
+    width:100%;
+    max-width:500px;
+
+    margin:35px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
+
+}
+
+
+/* ==========================
+   LABELS
+========================== */
+
+label{
+
+    display:block;
+
+    text-align:left;
+
+    margin-top:18px;
+
+    margin-bottom:6px;
+
+    font-weight:600;
+
+    color:#444;
+
+}
+
+
+/* ==========================
+   INPUTS
+========================== */
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:10px;
+
+    font-size:15px;
+
+    font-family:inherit;
+
+    transition:.25s;
+
+}
+
+
+/* ==========================
+   TEXTAREA
+========================== */
+
+textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+
+/* ==========================
+   FOCO
+========================== */
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#6A0DAD;
+
+    box-shadow:0 0 8px rgba(106,13,173,.18);
+
+}
+
+
+/* ==========================
+   UPLOAD
+========================== */
+
+input[type=file]{
+
+    background:#fafafa;
+
+    cursor:pointer;
+
+}
+
+
+/* ==========================
+   BOTÃO PADRÃO
+========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#6A0DAD;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+
+/* Hover */
+
+button:hover{
+
+    background:#58108f;
+
+    transform:translateY(-2px);
+
+}
+
+
+/* Clique */
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* ==========================
+   LINKS COMO BOTÕES
+========================== */
+
+.card-pet a{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:10px 16px;
+
+    border-radius:8px;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+
+/* ==========================
+   BOTÃO ROXO
+========================== */
+
+.botao-roxo{
+
+    background:#6A0DAD;
+
+    color:white;
+
+}
+
+.botao-roxo:hover{
+
+    background:#58108f;
+
+}
+
+
+/* ==========================
+   BOTÃO VERDE
+========================== */
+
+.botao-verde{
+
+    background:#2E7D32;
+
+    color:white;
+
+}
+
+.botao-verde:hover{
+
+    background:#256628;
+
+}
+
+
+/* ==========================
+   BOTÃO VERMELHO
+========================== */
+
+.botao-vermelho{
+
+    background:#C62828;
+
+    color:white;
+
+}
+
+.botao-vermelho:hover{
+
+    background:#aa2020;
+
+}
+
+
+/* ==========================
+   BOTÃO CINZA
+========================== */
+
+.botao-cinza{
+
+    background:#777;
+
+    color:white;
+
+}
+
+.botao-cinza:hover{
+
+    background:#666;
+
+}
+
+
+/* ==========================
+   PESQUISA POR CIDADE
+========================== */
+
+.busca-cidade{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin:30px auto;
+
+    flex-wrap:wrap;
+
+}
+
+
+.busca-cidade input{
+
+    max-width:320px;
+
+}
+
+
+.busca-cidade button{
+
+    width:auto;
+
+    padding:13px 22px;
+
+    margin-top:0;
+
+}
+/* =======================================================
+   BINGOLÚ
+   STYLE.CSS
+   PARTE 3
+   Cards + Feed + Avistamentos
+=======================================================*/
+
+
+/* ==========================
+   ÁREA DOS CARDS
+========================== */
+
+.feed-container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding-bottom:40px;
+
+}
+
+
+/* ==========================
+   CARD
+========================== */
+
+.card-pet{
+
+    width:380px;
+
+    background:rgb(245, 245, 245);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
+
+    transition:.25s;
+
+    text-align:left;
+
+}
+
+
+/* Hover */
+
+.card-pet:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 28px rgba(0,0,0,.18);
+
+}
+
+
+/* ==========================
+   IMAGEM
+========================== */
+
+
+
+
+.card-pet img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:contain;
+
+    background:rgb(229, 229, 229);
+
+}
+
+
+/* ==========================
+   ÁREA INTERNA
+========================== */
+
+.card-pet .conteudo{
+
+    padding:22px;
+
+}
+
+
+/* ==========================
+   NOME DO PET
+========================== */
+
+.card-pet h2{
+
+    text-align:center;
+
+    color:#6A0DAD;
+
+    margin-bottom:15px;
+
+    font-size:27px;
+
+}
+
+
+/* ==========================
+   STATUS
+========================== */
+
+.status{
+
+    text-align:center;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    padding:8px;
+
+    border-radius:8px;
+
+    margin-bottom:18px;
+
+}
+
+
+/* Perdido */
+
+.perdido{
+
+    background:#fdeaea;
+
+    color:#C62828;
+
+}
+
+
+/* Encontrado */
+
+.encontrado{
+
+    background:#eaf7ec;
+
+    color:#2E7D32;
+
+}
+
+
+/* Meu anúncio */
+
+.meu-anuncio{
+
+    background:#ede7ff;
+
+    color:#6A0DAD;
+
+}
+
+
+/* ==========================
+   INFORMAÇÕES
+========================== */
+
+.info-pet{
+
+    padding: 0 22px;
+
+    margin-top: 18px;
+
+}
+
+.info-pet p{
+
+    margin: 14px 0;
+
+    line-height: 1.5;
+
+}
+
+
+.info-pet strong{
+
+    color:#6A0DAD;
+
+}
+
+
+/* ==========================
+   DATA
+========================== */
+
+.data-postagem{
+
+    margin-top:auto;
+
+    padding:18px 22px;
+
+    border-top:1px solid #e5e5e5;
+
+    text-align:center;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================
+   ÁREA DOS BOTÕES
+========================== */
+
+.acoes{
+
+    margin-top:22px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    justify-content:center;
+
+}
+
+
+.acoes a{
+
+    flex:1;
+
+    text-align:center;
+
+    min-width:140px;
+
+}
+
+
+/* ==========================
+   CENTRAL DE AVISTAMENTOS
+========================== */
+
+.card-avistamento{
+
+    width:700px;
+
+    max-width:95%;
+
+    margin:25px auto;
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:25px;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.12);
+
+    text-align:left;
+
+}
+
+
+/* Pet */
+
+.card-avistamento h2{
+
+    color:#6A0DAD;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Linha */
+
+.card-avistamento hr{
+
+    margin:18px 0;
+
+}
+
+
+/* Informações */
+
+.card-avistamento p{
+
+    margin:10px 0;
+
+    line-height:1.6;
+
+}
+
+
+/* Títulos */
+
+.card-avistamento strong{
+
+    color:#6A0DAD;
+
+}
+
+
+/* Informante */
+
+.informante{
+
+    background:#f7f7fb;
+
+    border-left:5px solid #6A0DAD;
+
+    padding:15px;
+
+    border-radius:8px;
+
+    margin-top:15px;
+
+}
+
+
+/* ==========================
+   MENSAGEM VAZIA
+========================== */
+
+.vazio{
+
+    width:500px;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:15px;
+
+    margin:40px auto;
+
+    box-shadow:0 5px 18px rgba(0,0,0,.10);
+
+}
+
+
+.vazio h2{
+
+    color:#6A0DAD;
+
+    margin-bottom:15px;
+
+}
+
+
+.vazio p{
+
+    color:#666;
+
+    text-align:center;
+
+}
+
+
+/* ==========================
+   ETIQUETA
+========================== */
+
+.etiqueta{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    padding:8px 14px;
+
+    background:#ede7ff;
+
+    color:#6A0DAD;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+}
+/* =======================================================
+   BINGOLÚ
+   STYLE.CSS
+   PARTE 4
+   Acabamento + Responsividade + Animações
+=======================================================*/
+
+
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer{
+
+    margin-top:auto;
+
+    background:#6A0DAD;
+
+    color:white;
+
+    text-align:center;
+
+    padding:18px;
+
+    font-size:14px;
+
+}
+
+
+/* ==========================
+   CARD DE AVISTAMENTO
+========================== */
+
+.card-avistamento{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* Barra lateral */
+
+.card-avistamento::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    width:8px;
+
+    height:100%;
+
+    background:#6A0DAD;
+
+}
+
+
+/* ==========================
+   BLOCO DO INFORMANTE
+========================== */
+
+.informante{
+
+    margin-top:18px;
+
+    padding:18px;
+
+    background:#F7F3FF;
+
+    border-radius:12px;
+
+    border-left:5px solid #6A0DAD;
+
+}
+
+
+.informante h3{
+
+    margin-bottom:12px;
+
+    color:#6A0DAD;
+
+    font-size:18px;
+
+}
+
+
+.informante p{
+
+    margin:8px 0;
+
+}
+
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#6A0DAD;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+
+/* ==========================
+   ANIMAÇÕES
+========================== */
+
+.card-pet{
+
+    animation:aparecer .35s ease;
+
+}
+
+.card-avistamento{
+
+    animation:aparecer .35s ease;
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(12px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================
+   RESPONSIVIDADE
+========================== */
+
+@media(max-width:900px){
+
+    .feed-container{
+
+        padding:20px;
+
+    }
+
+    .card-pet{
+
+        width:100%;
+
+        max-width:420px;
+
+    }
+
+    .card-avistamento{
+
+        width:100%;
+
+    }
+    .card-pet{
+
+        display:flex;
+    
+        flex-direction:column;
+    
+    }
+
+}
+
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media(max-width:600px){
+
+    .navbar{
+
+        padding:15px;
+
+    }
+
+    .navbar h1{
+
+        font-size:28px;
+
+    }
+
+    .menu{
+
+        gap:8px;
+
+    }
+
+    .menu a{
+
+        font-size:14px;
+
+        padding:9px 14px;
+
+    }
+
+    .titulo-pagina{
+
+        font-size:28px;
+
+    }
+
+    .subtitulo{
+
+        font-size:15px;
+
+    }
+
+}
+
+
+/* ==========================
+   TRANSIÇÕES
+========================== */
+
+button,
+.menu a,
+.card-pet,
+.card-avistamento{
+
+    transition:.25s;
+
+}
+.container{
+
+    width:100%;
+
+    max-width:420px;
+
+    margin:70px auto;
+
+    text-align:center;
+
+}
+
+.container h1{
+
+    margin-bottom:10px;
+
+}
+
+.container .subtitulo{
+
+    margin-bottom:30px;
+
+}
+
+.container form{
+
+    width:100%;
+
+}
+
+.container button{
+
+    width:100%;
+
+}
+
+.link-secundario{
+
+    margin-top:25px;
+
+    color:#666;
+
+}
+
+.link-secundario a{
+
+    background:none;
+
+    color:#6A0DAD;
+
+    padding:0;
+
+    margin:0;
+
+    font-weight:bold;
+
+}
+
+.link-secundario a:hover{
+
+    text-decoration:underline;
+
+}
+.aviso-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    min-height:320px;
+
+}
+
+.aviso-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.aviso-card p{
+
+    max-width:260px;
+
+    line-height:1.6;
+
+}
+
+.texto-secundario{
+
+    color:#777;
+
+    font-size:15px;
+
+}
+
+.meu-anuncio{
+
+    display:inline-block;
+
+    margin:10px auto 15px;
+
+    padding:6px 14px;
+
+    background:#e8f5e9;
+
+    color:#2e7d32;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    border-radius:20px;
+
+    text-transform:uppercase;
+
+}
+
+/* ---------- Submenu Meus Pets ---------- */
+
+.submenu-meus-pets{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin:30px 0;
+
+}
+
+.submenu-meus-pets a{
+
+    background:white;
+
+    color:#6a0dad;
+
+    border:2px solid #6a0dad;
+
+    padding:12px 28px;
+
+    border-radius:30px;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.submenu-meus-pets a:hover{
+
+    background:#6a0dad;
+
+    color:white;
+
+}
+
+.submenu-meus-pets .submenu-ativo{
+
+    background:#6a0dad;
+
+    color:white;
+
+    pointer-events:none;
+
+}
+
+/* =========================================
+   DECORAÇÃO LATERAL DO FEED
+   ========================================= */
+
+.decoracao-patas {
+    position: fixed;
+
+    top: 180px;
+    bottom: 30px;
+
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.decoracao-patas img {
+    width: 68px;
+    height: 68px;
+
+    opacity: 0.30;
+}
+
+/* Lado esquerdo */
+
+.decoracao-patas.esquerda {
+    left: -10px;
+
+    align-items: flex-start;
+}
+
+.decoracao-patas.esquerda img:first-child {
+    transform: rotate(-25deg);
+}
+
+.decoracao-patas.esquerda img:last-child {
+    transform: rotate(20deg);
+}
+
+/* Lado direito */
+
+.decoracao-patas.direita {
+    right: -10px;
+
+    align-items: flex-end;
+}
+
+.decoracao-patas.direita img:first-child {
+    transform: rotate(25deg);
+}
+
+.decoracao-patas.direita img:last-child {
+    transform: rotate(-20deg);
+}
+.aviso-vazio {
+    box-sizing: border-box;
+
+    width: 460px;
+
+    padding: 25px 30px;
+
+    text-align: center;
+}
+
+.aviso-vazio h2 {
+    text-align: center;
+
+    margin: 0 0 20px 0;
+}
+
+.aviso-vazio p {
+    text-align: center;
+
+    margin: 0;
+
+    line-height: 1.6;
+}
+
+/* =========================
+   PÁGINA DE CADASTRO
+   ========================= */
+
+   .pagina-cadastro {
+    display: block;
+
+    min-height: 100vh;
+
+    text-align: center;
+}
+
+.conteudo-cadastro {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 40px auto 0;
+
+    text-align: center;
+}
+
+.conteudo-cadastro h1 {
+    margin: 0 0 25px 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 36px;
+
+    color: #6a0dad;
+
+    text-align: center;
+}
+
+.conteudo-cadastro form {
+    width: 100%;
+
+    max-width: 600px;
+
+    box-sizing: border-box;
+
+    margin: 0 auto;
+
+    padding: 25px;
+
+    text-align: center;
+}
+
+.conteudo-cadastro input,
+.conteudo-cadastro textarea {
+    box-sizing: border-box;
+
+    width: 100%;
+}
+
+.conteudo-cadastro button {
+    width: 100%;
+}
+
+.conteudo-cadastro .link-secundario {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 0;
+
+    background: none;
+
+    color: #6a0dad;
+
+    font-weight: normal;
+
+    text-decoration: none;
+}
+
+.conteudo-cadastro .link-secundario:hover {
+    text-decoration: underline;
+}
+.mensagem-vazia {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 15px 0 0;
+
+    text-align: center;
+
+    line-height: 1.6;
+}
+.card-pet .mensagem-vazia {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.titulo-avistamento {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 30px auto 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+/* ========================================
+   PÁGINA INICIAL
+   ======================================== */
+
+.pagina-inicial {
+
+    background-color: #f3ede3;
+
+    min-height: 100vh;
+
+    display: block;
+
+    margin: 0;
+
+    padding: 0;
+
+    text-align: center;
+}
+
+
+.conteudo-inicial {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 25px;
+
+}
+
+
+/* LOGO */
+
+.logo-inicial {
+
+    margin: 0 0 20px 0;
+
+    color: #6a0dad;
+
+    font-family: "Comic Sans MS",
+                 "Comic Sans",
+                 cursive;
+
+    font-size: 64px;
+
+    line-height: 1;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+/* APRESENTAÇÃO */
+
+.apresentacao-inicial {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+}
+
+
+.apresentacao-inicial h2 {
+
+    margin: 0 auto 20px;
+
+    color: #6a0dad;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 34px;
+
+    line-height: 1.25;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+.descricao-inicial {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+}
+
+
+/* BOTÕES */
+
+.acoes-iniciais {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.acoes-iniciais a {
+
+    width: 100%;
+
+    min-height: 52px;
+
+    box-sizing: border-box;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin: 0;
+
+    padding: 14px 25px;
+
+    border-radius: 10px;
+
+    font-size: 17px;
+
+    text-align: center;
+
+}
+
+
+.botao-principal {
+
+    background-color: #6a0dad;
+
+    color: white;
+
+}
+
+
+.botao-cadastro {
+
+    background-color: white;
+
+    color: #6a0dad;
+
+    border: 2px solid #6a0dad;
+
+}
+
+
+/* ASSINATURA */
+
+.proposito-inicial {
+
+    margin-top: 55px;
+
+    color: #777;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+
+}
+
+
+.proposito-inicial .separador {
+
+    color: #6a0dad;
+
+    margin: 0 12px;
+
+}
+
+/* =========================================================
+   PÁGINA DE LOGIN
+   ========================================================= */
+
+   .pagina-login {
+    min-height: 100vh;
+    margin: 0;
+    background: #f7f5f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo-login {
+    width: 100%;
+    max-width: 850px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+
+/* APRESENTAÇÃO */
+
+.apresentacao-login {
+    margin-bottom: 28px;
+}
+
+.logo-login {
+    margin: 0 0 10px;
+    color: #6f0bb8;
+    font-family: "Comic Sans MS", cursive;
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.apresentacao-login h2 {
+    margin: 0 0 12px;
+    color: #5f159f;
+    font-size: 28px;
+}
+
+.descricao-login {
+    max-width: 620px;
+    margin: 0 auto;
+    color: #6f6874;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+
+/* CARD DO LOGIN */
+
+.card-login {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 35px 42px;
+    box-sizing: border-box;
+
+    background: #ffffff;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(80, 50, 100, 0.12);
+}
+
+.card-login h2 {
+    margin: 0 0 8px;
+    color: #6f0bb8;
+    font-size: 27px;
+}
+
+.subtitulo-login {
+    margin: 0 0 25px;
+    color: #77717a;
+    font-size: 16px;
+}
+
+
+/* CAMPOS */
+
+.card-login form {
+    width: 100%;
+}
+
+.card-login input {
+    width: 100%;
+    height: 54px;
+    margin-bottom: 14px;
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d9d4dc;
+    border-radius: 10px;
+
+    font-size: 16px;
+    color: #555;
+    background: #fff;
+}
+
+.card-login input:focus {
+    outline: none;
+    border-color: #7610bd;
+    box-shadow: 0 0 0 2px rgba(118, 16, 189, 0.10);
+}
+
+
+/* BOTÃO */
+
+.card-login button {
+    width: 100%;
+    height: 54px;
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #7410b9;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.card-login button:hover {
+    background: #620aa1;
+}
+
+
+/* CADASTRO */
+
+.link-secundario {
+    margin-top: 22px;
+    color: #6d6870;
+    font-size: 15px;
+}
+
+.link-secundario a {
+    color: #6f0bb8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-secundario a:hover {
+    text-decoration: underline;
+}
+
+
+/* PROPÓSITO */
+
+.proposito-login {
+    margin-top: 30px;
+
+    color: #8a7c92;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.proposito-login .separador {
+    margin: 0 10px;
+    color: #b38dcc;
+}
+
+/* =========================================================
+   FEED - APRESENTAÇÃO
+   ========================================================= */
+
+   .pagina-feed {
+    background-color: #f3ede3;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-feed {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: 45px auto 25px;
+
+    padding: 0 25px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+}
+
+
+.simbolo-feed {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 30px;
+
+}
+
+
+.cabecalho-feed .titulo-pagina {
+
+    margin: 0 auto 12px;
+
+    color: #6a0dad;
+
+    font-size: 32px;
+
+    line-height: 1.25;
+
+    text-align: center;
+
+}
+
+
+.cabecalho-feed .subtitulo {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #6f6872;
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    text-align: center;
+
+}
+
+
+/* PESQUISA */
+
+.area-pesquisa-feed {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 0 auto 35px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+}
+
+
+.titulo-pesquisa {
+
+    margin: 0 0 12px;
+
+    color: #665d69;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+
+.area-pesquisa-feed .busca-cidade {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+    margin: 0 auto;
+
+}
+
+
+.area-pesquisa-feed .busca-cidade input {
+
+    flex: 1;
+
+    max-width: 470px;
+
+}
+
+
+/* MANTÉM OS CARDS COMO PARTE PRINCIPAL */
+
+.pagina-feed .feed-container {
+
+    margin-top: 0;
+
+}
+
+
+/* CARD VAZIO */
+
+.pagina-feed .aviso-card {
+
+    text-align: center;
+
+}
+
+
+.pagina-feed .aviso-card h2 {
+
+    text-align: center;
+
+    margin-bottom: 12px;
+
+}
+
+
+.pagina-feed .aviso-card p {
+
+    text-align: center;
+
+}
+
+
+.pagina-feed .texto-secundario {
+
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 14px;
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .cabecalho-feed {
+
+        margin-top: 30px;
+
+    }
+
+
+    .cabecalho-feed .titulo-pagina {
+
+        font-size: 27px;
+
+    }
+
+
+    .area-pesquisa-feed .busca-cidade {
+
+        flex-direction: column;
+
+    }
+
+
+    .area-pesquisa-feed .busca-cidade input {
+
+        width: 100%;
+
+        max-width: none;
+
+    }
+
+
+    .area-pesquisa-feed .busca-cidade button {
+
+        width: 100%;
+
+    }
+
+}
+/* Fonte divertida do BingoLú no Feed */
+
+.pagina-feed .navbar h1 {
+
+    font-family: "Comic Sans MS",
+                 "Comic Sans",
+                 cursive;
+
+    font-weight: bold;
+
+}
+
+
+/* Fonte divertida do título principal */
+
+.pagina-feed .titulo-pagina {
+
+    font-family: "Comic Sans MS",
+                 "Comic Sans",
+                 cursive;
+
+    font-weight: bold;
+
+}
+/* =========================================================
+   MEUS PETS - FONTE DA IDENTIDADE DO BINGOLÚ
+   ========================================================= */
+
+   .navbar h1 {
+
+    font-family: "Comic Sans MS",
+                 "Comic Sans",
+                 cursive;
+
+    font-weight: bold;
+
+}
+
+
+.titulo-pagina {
+
+    font-family: "Comic Sans MS",
+                 "Comic Sans",
+                 cursive;
+
+    font-weight: bold;
+
+}
+
+/* =========================================================
+   PATAS GRANDES - INDEX
+   ========================================================= */
+
+   .pagina-inicial .pata-index {
+
+    position: fixed;
+
+    top: 50%;
+
+    width: 150px;
+
+    z-index: 0;
+
+    pointer-events: none;
+
+}
+
+
+.pagina-inicial .pata-index img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    opacity: 0.55;
+
+}
+
+
+/* Pata esquerda */
+
+.pagina-inicial .pata-esquerda {
+
+    left: 55px;
+
+    transform: translateY(-50%) rotate(-12deg);
+
+}
+
+
+/* Pata direita */
+
+.pagina-inicial .pata-direita {
+
+    right: 55px;
+
+    transform: translateY(-50%) rotate(12deg);
+
+}
+
+
+/* Conteúdo sempre acima das patas */
+
+.pagina-inicial .conteudo-inicial {
+
+    position: relative;
+
+    z-index: 2;
+
+}
