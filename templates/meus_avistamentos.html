@@ -176,7 +176,7 @@
         <p>
 
             <strong>Telefone:</strong>
-            {{ aviso[5] }}
+            <span class="telefone-mascara">{{ aviso[5] }}</span>
 
         </p>
 
@@ -236,6 +236,17 @@
 
 </div>
 
+<!-- JavaScript para garantir que telefones antigos do banco que venham sem formatação sejam formatados dinamicamente na tela -->
+<script>
+    document.querySelectorAll('.telefone-mascara').forEach(function(el) {
+        let texto = el.textContent.replace(/\D/g, '');
+        if (texto.length === 11) {
+            el.textContent = '(' + texto.substring(0,2) + ') ' + texto.substring(2,7) + '-' + texto.substring(7);
+        } else if (texto.length === 10) {
+            el.textContent = '(' + texto.substring(0,2) + ') ' + texto.substring(2,6) + '-' + texto.substring(6);
+        }
+    });
+</script>
 
 </body>
 

@@ -98,6 +98,63 @@
 
 </div>
 
+<!-- Nova Funcionalidade: Seletores de Abas Geográficas -->
+<div class="abas-feed">
+    
+    <a href="/feed?aba=geral" 
+       class="aba-link {% if aba_ativa == 'geral' %}aba-ativa{% endif %}">
+        🔍 Feed Regional (5 km)
+    </a>
+
+    <a href="/feed?aba=alertas" 
+       class="aba-link {% if aba_ativa == 'alertas' %}aba-ativa{% endif %}">
+        🚨 Alertas Urgentes (2 km)
+    </a>
+    
+</div>
+
+<!-- Filtros de Espécie: Aparecem APENAS se estiver na aba Geral -->
+{% if aba_ativa == 'geral' %}
+<div class="filtros-especie">
+    
+    <a href="/feed?cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if not especie_ativa %}filtro-ativo{% endif %}">
+        Todos
+    </a>
+
+    <a href="/feed?especie=Canino&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Canino' %}filtro-ativo{% endif %}">
+        Canino
+    </a>
+
+    <a href="/feed?especie=Felino&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Felino' %}filtro-ativo{% endif %}">
+        Felino
+    </a>
+
+    <a href="/feed?especie=Réptil&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Réptil' %}filtro-ativo{% endif %}">
+        Réptil
+    </a>
+
+    <a href="/feed?especie=Roedor&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Roedor' %}filtro-ativo{% endif %}">
+        Roedor
+    </a>
+
+    <a href="/feed?especie=Anfíbio&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Anfíbio' %}filtro-ativo{% endif %}">
+        Anfíbio
+    </a>
+
+    <a href="/feed?especie=Ave&cidade={{ cidade if cidade else '' }}&aba=geral" 
+       class="botao-filtro {% if especie_ativa == 'Ave' %}filtro-ativo{% endif %}">
+        Ave
+    </a>
+    
+</div>
+{% endif %}
+
 
 <div class="feed-container">
 
@@ -144,50 +201,64 @@
 
     <div class="info-pet">
 
-
+        <!-- Informações Básicas (Sempre Visíveis) -->
         <p>
-
-            <strong>Descrição</strong>
-
-            <br>
-
-            {{ pet[2] }}
-
-        </p>
-
-
-        <p>
-
             <strong>Cidade</strong>
-
             <br>
-
             {{ pet[3] }}
-
         </p>
-
 
         <p>
-
             <strong>Contato</strong>
-
             <br>
-
             {{ pet[4] }}
-
         </p>
 
+        <!-- Nova Tag Sugerida: Exibição da Distância em Quilômetros -->
+        <p class="distancia-pet">
+            <strong>Proximidade</strong>
+            <br>
+            {% if pet[14] is not none %}
+                A {{ pet[14] }} km de você
+            {% else %}
+                Não mapeado
+            {% endif %}
+        </p>
 
         <p class="data-postagem">
-
             <strong>Publicado em</strong>
-
             <br>
-
             {{ pet[6] }}
-
         </p>
 
+        <!-- Seção Expansível para Detalhes Ocultos -->
+        <details class="detalhes-sanfona">
+            <summary class="titulo-sanfona">
+                Ver mais detalhes
+            </summary>
+            
+            <div class="conteudo-sanfona">
+                <p>
+                    <strong>Espécie:</strong> {{ pet[9] if pet[9] else 'Não informada' }}
+                </p>
+                
+                <p>
+                    <strong>Sexo:</strong> {{ pet[10] if pet[10] else 'Não informado' }}
+                </p>
+
+                {% if pet[9] == 'Canino' and pet[11] %}
+                <p>
+                    <strong>Porte:</strong> {{ pet[11] }}
+                </p>
+                {% endif %}
+
+                <p class="observacao-sanfona">
+                    <strong>Descrição / Observações</strong>
+                    <br>
+                    {{ pet[2] }}
+                </p>
+            </div>
+        </details>
 
     </div>
 
@@ -250,14 +321,14 @@
     <p>
 
         Não existem pets cadastrados
-        para esta pesquisa.
+        para esta pesquisa ou região neste momento.
 
     </p>
 
 
     <p class="texto-secundario">
 
-        Pesquise outra cidade ou aguarde
+        Ajuste seus filtros de busca ou aguarde
         novas publicações.
 
     </p>
@@ -270,7 +341,6 @@
 
 
 </div>
-
 
 </body>
 

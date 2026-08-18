@@ -2295,3 +2295,70 @@ button,
     z-index: 2;
 
 }
+
+/* --- ABAS GEOGRÁFICAS (Feed vs Alertas) --- */
+.abas-feed {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+    border-bottom: 2px solid #e0e0e0;
+    gap: 20px;
+}
+
+.aba-link {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    color: #666;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.aba-link:hover {
+    color: #7d2ae8; /* Roxo do BingoLú para o hover */
+}
+
+/* Estado ativo da aba selecionada */
+.aba-link.aba-ativa {
+    border-bottom: 4px solid #5a189a; /* Roxo escuro combinando com o botão pesquisar */
+    color: #5a189a;
+}
+
+/* --- BOTÕES DE FILTRO DE ESPÉCIE --- */
+.filtros-especie {
+    text-align: center;
+    margin: 20px 0 35px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.botao-filtro {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 30px; /* Bordas arredondadas e amigáveis */
+    border: 2px solid #5a189a; /* Borda roxa fina */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: #5a189a; /* Texto roxo por padrão */
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efeito interativo ao passar o mouse */
+.botao-filtro:hover {
+    background-color: #f3e5f5; /* Fundo roxo bem clarinho no hover */
+    transform: translateY(-2px); /* Efeito flutuante discreto */
+}
+
+/* Estado dinâmico do botão que está selecionado */
+.botao-filtro.filtro-ativo {
+    color: #ffffff !important;
+    background-color: #5a189a !important; /* Roxo sólido preenchido */
+    border-color: #5a189a !important;
+    box-shadow: 0 4px 10px rgba(90, 24, 154, 0.2);
+}
